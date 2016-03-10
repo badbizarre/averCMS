@@ -1,0 +1,61 @@
+.tab-pane {
+	padding: 15px 0px;
+}
+.edit-image {
+	padding: 5px 0;
+	border-bottom: 1px solid #d8d8d8;	
+}
+.edit-image a {
+	color: #53a93f;
+	font-size: 13px;
+}
+
+.cabinet-title {
+	padding: 0 0 10px 0px;
+	border-bottom: 1px solid #d8d8d8;
+	margin-bottom: 10px;
+	color: #53a93f;
+	font-weight: bold;
+}
+
+.cabinet-description {
+	color: #777;
+}
+
+.cabinet-description a {
+	color: #53a93f;
+}
+
+.chosen-container-single .chosen-single {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #cbd5dd;
+    border-radius: 2px;
+    box-shadow: none;
+    box-sizing: border-box;
+    cursor: text;
+    height: auto !important;
+    margin: 0;
+    min-height: 30px;
+    overflow: hidden;
+    padding: 4px 12px;
+    position: relative;
+    width: 100%;
+}
+
+.button-panel {
+	margin-top: 10px;
+	padding: 5px;
+	background: #f1f1f1;
+}
+
+.button-panel .btn {
+	display: block;
+	width: 100%;
+	margin: 5px 0;
+}
+
+.button-panel__is-friend {
+	display: block;
+	padding: 5px 10px;
+	text-align: center;
+}

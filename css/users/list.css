@@ -1,0 +1,40 @@
+.item-users {
+	padding: 0px;
+}
+
+.item-user {
+	position: relative;
+	height: 220px;	
+}
+
+.item-user img {
+	width: 100px;
+}
+
+.user-detail {
+	margin-top: 5px;
+}
+
+.user-detail strong {
+	font-size: 16px;
+    line-height: 20px;
+}
+
+.user-action {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.user-detail__name {
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+
+.user-detail__city {
+	padding-bottom: 5px;
+}
+
+.button-panel__is-friend {
+	padding: 0;
+}

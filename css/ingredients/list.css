@@ -1,0 +1,13 @@
+.ingredients li {
+	padding-left: 30px;
+}
+.ingredients li.first-letter {
+	padding-top: 20px;
+}
+
+.ingredients li.first-letter a {
+	position: absolute;
+	font-size: 16px;
+	margin: 0px 0 0 -20px;
+	text-transform: uppercase;
+}

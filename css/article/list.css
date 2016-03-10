@@ -1,0 +1,144 @@
+.item-recept {
+	padding: 15px 15px 0px 15px;
+}
+.count-show {
+	color: #999;
+}
+.view-bot-left {
+	float: left;
+	width: auto;
+}
+.view-bot-center {
+    margin: 0;
+    padding: 0;
+	overflow: hidden;
+}
+.input-comment {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #999;
+    cursor: text;
+    font-size: 12px;
+    height: 30px;
+    padding: 6px 8px;
+}
+.view-bot-center .input-comment {
+	margin-left: 8px;	
+}
+.view-bot-right {
+    float: right;
+    height: 100%;
+    outline: none;
+    overflow: hidden;
+    padding-left: 8px;
+    position: relative;
+}
+
+.comment-block {
+	-webkit-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+    background-color: #f5f5f5;
+	margin: 0 -15px;
+	padding: 0;
+}
+.comment-content {
+	margin-right: 0;
+    overflow-y: auto;
+    width: auto;
+	padding: 15px 15px 0 15px;	
+	border-top: 1px solid #e5e5e5;	
+}
+.comment-content:empty {
+	border-top: none;
+	padding-top: 0px;
+}
+.comment-header {
+	padding: 0 0 15px 0;
+}
+.comment-header a {
+	color: ##262626;
+	font-size: 12px;
+}
+.comment-line {
+	position: relative;
+    border-bottom: 0;
+    margin: 0 0 0 0;
+    min-height: 56px;
+    padding: 0px 0px 15px 48px;
+    vertical-align: top;	
+}
+.comment-line .hide-comment {
+	display: none;
+	font-size: 11px;
+	color: #404040;
+}
+.comment-line .edit-comment {
+	margin-right: 5px;
+	display: inline-block;
+}
+.comment-line .hide-comment span {
+	opacity: 0.7;
+	outline: none;
+	cursor: pointer;
+}
+.comment-line .hide-comment span:hover {
+	opacity: 1;	
+}
+
+.comment-line:hover .hide-comment {
+	display: inline-block;
+}
+.comment-image {
+	width: auto;
+}
+.comment-image img {
+	float: left;
+	border: none;
+    margin: 4px 0 0 -48px;	
+	width: 38px;
+	height: 38px;
+	border-radius: 2px;
+}
+.comment-user {
+	width: auto;
+}
+.comment-date {
+	color: #999;
+	font-size: 12px;
+	display: inline-block;
+}
+.comment-text {
+	color: #404040;
+    font-size: 13px;
+}
+
+.comment-bottom {
+	border-top: 1px solid #e5e5e5;
+    padding: 20px 15px;
+}
+
+.form-comment {
+    padding: 0 0 0 48px;
+    margin: 0;
+}
+.comment-image img {
+	margin-top: 0px;
+}
+.myform .form-group {
+	margin-bottom: 5px;
+}
+.myform textarea {
+	background-color: #fff;
+    border: 1px solid #ccc;
+	min-height: 3.9em;
+    padding: 6px 6px;
+	width: 100%;
+	resize: none;
+	outline: 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;	
+}

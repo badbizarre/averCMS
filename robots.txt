@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap:  http://povarenok.by/sitemap.xml
+
+User-agent: Yandex
+host: povarenok.by

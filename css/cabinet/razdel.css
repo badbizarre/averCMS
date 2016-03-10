@@ -1,0 +1,29 @@
+.left-menu {
+	margin-top: 20px;
+}
+.list-group li {
+	position: relative;
+}
+.list-group li ul {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 100%;
+	margin-left: -1px;
+	z-index: 99;
+	width: 100%;	
+}
+.list-group li:hover ul {
+	display: block;
+}
+.list-group-item {	
+	border-radius: 0px !important;
+	border-bottom: none;	
+}
+.list-group ul li .list-group-item {
+	border-bottom: none;
+}
+.list-group ul li:last-child .list-group-item {
+	border-bottom: 1px solid #ddd;;	
+}
+

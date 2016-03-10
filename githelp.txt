@@ -1,0 +1,38 @@
+Копируем и вставляем в терминал
+
+git config --global user.name 'badbizarre'
+git config --global user.email 'madbizarre@yandex.ru'
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
+git config --global credential.helper store
+git config --global push.default simple
+git config --global core.autocrlf false
+git config --global core.eol lf
+
+git reset --soft 3a472ee
+
+
+Процесс работы с терминалом
+
+mkdir D:/github/ #Создаем папку на диске C (необязательно)
+cd D:/github/ #Заходим в папку
+git clone https://github.com/badbizarre/test.git #закачиваем файлы с GitHub
+cd D:/github/test/ #Заходим в папку локального репозитория
+
+#после чего, вы можете произвести манипуляции с чем либо, производить изменения
+#изменять, удалять, переименовывать файлы и папки
+
+#git rm -r #удаление папки в локальном репозитории
+#git rm #удаление файла в локальном репозитории
+
+Основная работа с git
+git add . #Производится индексирование файлов на предмет изменения в них
+git commit -m "Комментарий к изменению" #Сохраняем изменения
+git push -f #Отправляем на сервер GitHub
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/badbizarre/povarenok.git
+git push -u origin master

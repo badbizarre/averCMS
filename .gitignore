@@ -1,0 +1,11 @@
+# folder catalog
+/assets/images/catalog
+
+# folder users
+/assets/images/users
+
+# folder adminusers
+/assets/images/adminusers
+
+# file schetchik_view
+/system/templates/views/schetchik_view.php
