@@ -41,6 +41,12 @@ html,body {
     margin-left: -10px;
     margin-right: -10px;
 }
+.form-group .fg__small {
+	color: #999;
+}
+.form-group .fg__small a {
+	color: #53a93f;
+}
 #wrap,
 .main {	
 	height: 100%;		
@@ -210,6 +216,12 @@ html,body {
 	color: #404040;
     font-size: 13px;
     line-height: 1.4;	
+}
+.item-preview .image {
+	margin: 0 -15px;	
+}
+.item-preview .desc__bottom {
+	margin: 15px 0 0px 0px;	
 }
 .item-preview .caption {
 	padding: 20px 10px;

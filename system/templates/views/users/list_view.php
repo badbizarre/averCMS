@@ -6,7 +6,7 @@
 if (@$items) : ?>
 <div class="item-users">
 	<div class="row">
-	<?php foreach($items as $item) { echo get_user_card($item); } ?>
+	<?php Render::view($that_path.'/user_card',array('items'=>$items),TRUE); ?>
 	</div>
 </div>	
 <ul class="pagination pagination-sm">

@@ -5,6 +5,8 @@ class Cabinet_Controller {
 
 	public function __construct() {	
 	
+		if (!cmsUser::isSessionSet('user')) header("Location: /");
+	
 		$this->_page = URL::getSegment(1);
 		$this->_table = get_table('users');
 		
@@ -56,7 +58,7 @@ class Cabinet_Controller {
 	
 
 	
-		$ids = Database::getRows($this->_table_users_like,'id asc',false,'id_user = '.$this->_id_user.' and status = 1 and table_name="catalog"');
+		$ids = Database::getRows($this->_table_users_like,'id asc',false,'id_user = '.$this->_id_user.' and table_name="catalog"');
 		$ids_html = get_keys_items($ids,'id_table');
 		
 		$where = "id IN($ids_html)";
@@ -77,20 +79,15 @@ class Cabinet_Controller {
 
 		$this->_content['h1'] = "Мои друзья";
 
-		$friends = Users::get_friends_list('friends');	
+		$path_url = ((URL::getSegment(3)=='') ? URL::getSegment(2) : URL::getSegment(3));
 		
-		$new_friends = Users::get_friends_list('new');
-
-		$out_friends = Users::get_friends_list('out');
+		if (!in_array($path_url,array('friends','new','out','old'))) return;
 		
-		$old_friends = Users::get_friends_list('old');
-		
+		$items = Users::get_friends_list($path_url);	
+	
 		$this->_content['content'] = Render::view (
 			$this->_page.'/friends', Array (
-				'friends' => $friends,
-				'new_friends' => $new_friends,
-				'out_friends' => $out_friends,
-				'old_friends' => $old_friends,
+				'items' => $items
 			)
 		);
 
@@ -176,6 +173,7 @@ class Cabinet_Controller {
 					'birthday_month' => $_POST['birthday_month'],			  		  		  		  		  		  
 					'birthday_year' => $_POST['birthday_year'],			  		  		  		  		  		  
 					'city' => $_POST['city'],			  		  		  		  		  		  
+					'current_info' => $_POST['current_info'],			  		  		  		  		  		  
 					'about' => $_POST['about'],			  		  		  		  		  		  
 					'interes' => $_POST['interes']		  		  		  		  		  		  
 				);
@@ -203,5 +201,17 @@ class Cabinet_Controller {
 		echo json_encode($response);
 		
 	}
-  
+ 	
+	public function messagesAction() {
+		
+		$this->_content['h1'] = 'Мои сообщения';
+
+		$this->_content['content'] = Render::view ($this->_page.'/messages',array(
+
+		));
+	
+		Render::layout('page',  $this->_content);	
+	
+	}
+   
 }

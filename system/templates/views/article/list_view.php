@@ -22,10 +22,11 @@ if (@$items) : ?>
 				<div class="title-small"><small><?php echo transform_date($item['date_create'],true).' в '.transform_time($item['date_create']); ?></small></div>
 			</div>
 			<div class="description"><?php echo $item['short_description']; ?></div>
-			<a href="<?php echo insert_image($that_path,'big',$item['image']); ?>" class="fancybox" title="<?php echo $item['name']; ?>">
-				<img src="<?php echo insert_image($that_path,'small',$item['image']); ?>" alt="<?php echo $item['name']; ?>" class="img-responsive center-block">
-			</a>			
-			
+			<div class="image">
+				<a href="<?php echo insert_image($that_path,'big',$item['image']); ?>" class="fancybox" title="<?php echo $item['name']; ?>">
+					<img src="<?php echo insert_image($that_path,'small',$item['image']); ?>" alt="<?php echo $item['name']; ?>" class="img-responsive center-block">
+				</a>			
+			</div>
 			<div class="caption row">
 		
 				<div class="view-bot-left">

@@ -21,6 +21,27 @@
 			</div>
 			<div class="col-md-5">
 
+				<?php if (!empty($author)): ?>
+				<div class="author-block">
+					<div class="author-block__title">Автор</div>
+					<div class="row author">
+						<div class="col-sm-3">
+							<a href="/users/id<?php echo $author['id']; ?>">
+								<img src="<?php echo insert_image('users','big',$author['image']); ?>" class="img-responsive" />
+							</a>
+						</div>
+						<div class="col-sm-9">
+							<a href="/users/id<?php echo $author['id']; ?>"><?php echo $author['name']; ?></a>
+							<div class="author__info">
+								<?php echo $author['current_info']; ?>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+				<?php endif; ?>
+				
 				<div class="">
 					<?php echo $html_ingredient; ?>
 				</div>

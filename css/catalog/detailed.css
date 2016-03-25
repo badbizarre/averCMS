@@ -4,6 +4,24 @@
 .opisanie {
 	margin-top: 20px;
 }
+.author-block {
+	margin-bottom: 20px;
+}
+
+.author-block__title {
+	font-size: 20px;
+}
+
+.author-block__title {
+	font-size: 20px;
+}
+
+.author__info {
+	color: #666;
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 2px;	
+}
 
 .item-preview .caption {
     padding-top: 0;

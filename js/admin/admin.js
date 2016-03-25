@@ -38,12 +38,6 @@ $(document).ready(function() {
 		});
 	});
 
-	// Add responsive to jqGrid
-	$(window).bind('resize', function () {
-		var width = $('.jqGrid_wrapper').width();
-		$('#jqtable').setGridWidth(width);
-	});
-	
 	$(".btn-ajax").click(function(e) {
 		var that = $(this),
 			form = that.parents('form'),

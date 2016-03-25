@@ -19,7 +19,7 @@ class Article_Controller {
 		
 		$this->_table_users_like = get_table('users_like');
 
-		$this->_content['left'] = Render::view ('article/razdel');
+		$this->_content['left'] = Render::view ('article/razdel').Render::view ('cabinet/razdel');
   			
 	}
 
@@ -123,9 +123,6 @@ class Article_Controller {
 
 		if (isset($_POST['variate'])) {
 
-			if ($_POST['variate']==1) $field = 'count_like';
-			if ($_POST['variate']==2) $field = 'count_note';
-
 			if (isset($_POST['id_table']) and !empty($_POST['id_table'])) {
 				$id_table = $_POST['id_table'];
 				$id_user = cmsUser::sessionGet('user:id');
@@ -136,9 +133,6 @@ class Article_Controller {
 								
 					if (is_numeric($id_table)) {
 
-						$item = Database::getRow($this->_table,$id_table);
-						$count_variate = $item[$field];
-						
 						$data = array(
 							'id_user' => $id_user,
 							'id_table' => $id_table,
@@ -149,24 +143,16 @@ class Article_Controller {
 						
 						if (isset($users_like) and !empty($users_like)) {	
 							
-							if ($users_like['status']) {
-								$count_variate--;
-								$data['status'] = 0;								
-							} else {
-								$count_variate++;
-								$data['status'] = 1;
-							}
-							Database::update($this->_table_users_like,$data,'id='.$users_like['id']);
+							Database::delete($this->_table_users_like,$users_like['id']);
 													
 						} else {
-							$count_variate++;
-							$data['status'] = 1;
-							Database::insert($this->_table_users_like,$data);
-						}				
-					
-						Database::update($this->_table,array($field=>$count_variate),"id=$id_table");
+							
+							Database::insert($this->_table_users_like,$data,'id='.$users_like['id']);
+														
+						}					
+
 						$item = Database::getRow($this->_table,$id_table);
-						
+												
 						$response['succes'] = true;
 						$response['html'] = get_buttons_recept($item,$this->_page);
 					}

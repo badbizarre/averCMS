@@ -20,6 +20,9 @@ if (cmsUser::isSessionSet('user')) {
 						
 			if ($url=='notifications') $cls = 'class="active"'; else $cls = '';
 			echo '<li><a href="/cabinet/notifications" '.$cls.'>Мои ответы</a></li>';
+									
+			if ($url=='messages') $cls = 'class="active"'; else $cls = '';
+			echo '<li><a href="/cabinet/messages" '.$cls.'>Мои сообщения</a></li>';
 						
 			if ($url=='likes_note') $cls = 'class="active"'; else $cls = '';
 			echo '<li><a href="/cabinet/likes_note" '.$cls.'>Мои заметки</a></li>';	

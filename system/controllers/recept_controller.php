@@ -34,12 +34,19 @@ class Recept_Controller {
 
 			$comments = get_comments_where($item['id'],$this->_page);
 			
+			$elem = Database::getRow(get_table('users_recept'),$item['id'],'id_catalog');
+			$author = array();
+			if (!empty($elem)) {
+				$author = Database::getRow(get_table('users'),$elem['id_user']);
+			} 
+			
 			$this->_content['content'] = Render::view (
 				$this->_page.'/detailed', Array (
 					'item' => $item,
 					'html_ingredient' => $html_ingredient,
 					'breadcrumbs' => $breadcrumbs,
-					'comments' => $comments
+					'comments' => $comments,
+					'author' => $author
 				)
 			);
 			

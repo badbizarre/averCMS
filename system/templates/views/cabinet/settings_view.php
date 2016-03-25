@@ -42,6 +42,8 @@
 				
 				<?php echo html_form_group('Город',html_input('city','city',$item['city'])); ?>	
 				
+				<?php echo html_form_group('Подпись',html_input('current_info','current_info',$item['current_info'])); ?>	
+				
 				<?php echo html_form_group('О себе',html_textarea('about',$item['about'])); ?>	
 				
 				<?php echo html_form_group('Интересы',html_textarea('interes',$item['interes'])); ?>	

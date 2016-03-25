@@ -388,7 +388,92 @@ function get_user_name($item) {
 	
 }
 
+function parse_by_povarenok_ru($site_href) {
 
+	if (!isset($site_href) and empty($site_href)) return @$item;
+	
+	$item = array();
+		
+	//подгружаем библиотеку
+	Load::library('simple_html_dom.php');
+	//создаём новый объект
+	$html = new simple_html_dom();
+
+	$html = file_get_html($site_href);	
+	//находим все ссылки на странице и...
+
+	$ingredient_tag = '.recipe-ing';
+	$instruction_tag = '.recipe-text';
+	$instruction_tag2 = '.recipe-steps tr';
+	
+	$item['time'] = '';
+	$item['short_description'] = '';
+	$item['name'] = '';
+	
+	if (count($html->find('time[itemprop=totalTime]',0))) 
+	$item['time'] = $html->find('time[itemprop=totalTime]',0)->plaintext;	
+
+	if (count($html->find('span[itemprop=summary]',0))) 
+	$item['short_description'] = $html->find('span[itemprop=summary]',0)->plaintext;		
+
+	if (count($html->find('h1 > a',3)))
+	$item['name'] = $html->find('h1 > a',3)->plaintext;		
+	
+	$i = 0;				
+	if(count($html->find($ingredient_tag))) {	
+		foreach($html->find($ingredient_tag) as $div) {
+			for($i=0;$i<count($div->find('span[itemprop=name]'));$i++) {
+				$ingredient = $div->find('span[itemprop=name]',$i)->plaintext;
+				
+				if (count($div->find('span[itemprop=amount]',$i))) {
+					$value = $div->find('span[itemprop=amount]',$i)->plaintext;
+					$kolvo = substr($value, 0, strpos($value, ' '));
+					$measure = substr($value, strpos($value, ' '));
+				} else {
+					$kolvo = '';
+					$measure = '';					
+				}
+				$item['ing'][$i]['ingredient'] = $ingredient;
+				$item['ing'][$i]['kolvo'] = $kolvo;
+				$item['ing'][$i]['measure'] = $measure;
+			}
+		}
+	}
+	
+	$item['recept'] = '';	
+	$i = 1;		
+	if(count($html->find($instruction_tag2))) {	
+		foreach($html->find($instruction_tag2) as $div){
+			$item['recept'] .= $i++.") ".$div->last_child()->plaintext."\n";		
+		}
+	}
+
+	if(count($html->find($instruction_tag))) {	
+		foreach($html->find($instruction_tag) as $div){
+			$item['recept'] .= $div->plaintext;		
+		}
+	}
+
+	$html->clear(); 
+	unset($html);
+	
+	return $item;
+}
+
+function get_ing_by_parse($ingredients) {
+	$data = array();
+	if (!isset($ingredients) and empty($ingredients)) return $data;
+	$i=0;
+	foreach($ingredients as $ing) {
+		$id_ingredient = Database::getField(get_table('ingredients'),$ing['ingredient'],'name','id');
+		$id_measure = Database::getField(get_table('measures'),trim($ing['measure']),'name','id');
+		$data[$i]['id_ingredient'] = $id_ingredient;
+		$data[$i]['kolvo'] = $ing['kolvo'];
+		$data[$i]['id_measure'] = $id_measure;
+		$i++;
+	}
+	return $data;
+}
 
 
 

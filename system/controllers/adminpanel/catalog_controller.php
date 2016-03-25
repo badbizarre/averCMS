@@ -121,13 +121,36 @@ class Catalog_Controller {
 	}
   
 	public function saveAction() {
-		
+
+		$error = array();
+		$param = array();
+		$response = array();
+				
 		if (isset($_POST['action'])) {
 
-			$error = array();
-			$param = array();
-			$response = array();
+			$path = $_POST['path'];
+		
+			if (!Database::existField($this->_table,$path,@$_POST['id'])) {
+				$response['success'] = false;
+				$response['message'] = "Путь $path уже существует. Данные не сохранены!";
+				echo js_response($response);	
+				return;
+			}
 			
+			if (empty($_POST['id_tree'])) {
+				$response['success'] = false;
+				$response['message'] = "Необходимо выбрать раздел!";	
+				echo js_response($response);
+				return;		
+			}
+			
+			if (empty($_POST['id_ingredient'][0])) {
+				$response['success'] = false;
+				$response['message'] = "Необходимо выбрать Ингредиент!";	
+				echo js_response($response);
+				return;				
+			}
+						
 			if ($_FILES['image']['name']) { 
 
 				if (!empty($_POST['datay']) and !empty($_POST['datax'])) {
@@ -139,7 +162,7 @@ class Catalog_Controller {
 					);
 				}
 				
-				$filename = $_POST['path'];
+				$filename = $path;
 				
 				$upload = Database::uploadImage($_FILES['image'], $this->_config['image'], $param, $filename);
 
@@ -149,14 +172,14 @@ class Catalog_Controller {
 			
 			$name = htmlspecialchars($_POST['name']);
 			$name_sm = mb_strtolower($name,'UTF-8');
-			if (empty($_POST['title'])) $title = $name.' рецепт'; else $title = $_POST['title'];
+			if (empty($_POST['title'])) $title = $name.' рецепт с фото'; else $title = $_POST['title'];
 			if (empty($_POST['keywords'])) $keywords = 'Кулинарные рецепты, рецепт '.$name_sm; else $keywords = $_POST['keywords'];
 			if (empty($_POST['description'])) $description = 'Приготовить '.$name_sm.' дома'; else $description = $_POST['description'];
 
 			$data = array( 
 				'active' => ((isset($_POST['active'])) ? 1 : 0),
 				'name' => $name,			  		  		  		  		  		  
-				'path' => $_POST['path'],			  		  		  		  		  		  
+				'path' => $path,			  		  		  		  		  		  
 				'time' => $_POST['time'],			  		  		  		  		  		  
 				'recept' => htmlspecialchars($_POST['recept']),			  		  		  		  		  		  
 				'date_create' => date('Y-m-d H:i:s'),			  		  		  		  		  		  
@@ -198,31 +221,26 @@ class Catalog_Controller {
 
 				}
 				
-				if (!empty($_POST['id_tree'])) {
-					Database::clearTable($this->_table_cat,"id_catalog=$id_catalog");
-					foreach($_POST['id_tree'] as $id_tree) {
-						$data_cat = array(
-							'id_catalog' => $id_catalog,
-							'id_tree' => $id_tree
-						);
-						Database::insert($this->_table_cat,$data_cat);
-					}
+				Database::clearTable($this->_table_cat,"id_catalog=$id_catalog");
+				foreach($_POST['id_tree'] as $id_tree) {
+					$data_cat = array(
+						'id_catalog' => $id_catalog,
+						'id_tree' => $id_tree
+					);
+					Database::insert($this->_table_cat,$data_cat);
 				}
-
-				if (!empty($_POST['id_ingredient'])) {
-					Database::clearTable($this->_table_catalog_ingredients,"id_catalog=$id_catalog");
-					foreach($_POST['id_ingredient'] as $key => $item) {
-						$data_ing = array(
-							'id_catalog' => $id_catalog,
-							'id_ingredient' => @$_POST['id_ingredient'][$key],
-							'kolvo' => @$_POST['kolvo'][$key],
-							'id_measure' => @$_POST['id_measure'][$key]
-						);
-						Database::insert($this->_table_catalog_ingredients,$data_ing);
-					}
-				
+		
+				Database::clearTable($this->_table_catalog_ingredients,"id_catalog=$id_catalog");
+				foreach($_POST['id_ingredient'] as $key => $item) {
+					$data_ing = array(
+						'id_catalog' => $id_catalog,
+						'id_ingredient' => @$_POST['id_ingredient'][$key],
+						'kolvo' => @$_POST['kolvo'][$key],
+						'id_measure' => @$_POST['id_measure'][$key]
+					);
+					Database::insert($this->_table_catalog_ingredients,$data_ing);
 				}
-
+	
 				$response['success'] = true;
 				$response['message'] = 'Данные успешно сохранены';
 				$response['url'] = '/adminpanel/'.$this->_page;
@@ -231,11 +249,11 @@ class Catalog_Controller {
 				$response['success'] = false;
 				$response['message'] = $error['image'];	
 			}
-			
-			echo js_response($response);
-	
+
 		}
-		
+			
+		echo js_response($response);
+			
 	}
 
 	public function deleteAction() {
@@ -250,7 +268,10 @@ class Catalog_Controller {
 					@unlink(ROOT.$this->_config['image']['small']['path'].$item['image']);
 					@unlink(ROOT.$this->_config['image']['big']['path'].$item['image']);
 				}
-				Database::delete($this->_table,$id);				
+				Database::delete($this->_table,$id);
+				Database::delete($this->_table_cat,$id,'id_catalog');
+				Database::delete($this->_table_catalog_ingredients,$id,'id_catalog');
+					
 			}
 			$res['succes'] = true;
 		} else {
@@ -427,7 +448,6 @@ class Catalog_Controller {
 
 	}
 
-	
 	public function reloadsitemapAction() {
 				
 		$homepage = file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/sitemap_xml'); 

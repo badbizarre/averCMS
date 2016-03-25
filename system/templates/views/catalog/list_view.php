@@ -22,10 +22,14 @@ if (@$items) : ?>
 				<div class="title-small"><small><?php echo transform_date($item['date_create'],true).' в '.transform_time($item['date_create']); ?></small></div>
 			</div>
 			<div class="description"><?php echo get_html_ingredient($item['id']); ?></div>
-			<a href="<?php echo insert_image('catalog','big',$item['image']); ?>" class="fancybox" title="<?php echo $item['name']; ?>">
-				<img src="<?php echo insert_image('catalog','small',$item['image']); ?>" alt="<?php echo $item['name']; ?>" class="img-responsive center-block">
-			</a>			
-			
+			<div class="image">
+				<a href="<?php echo insert_image('catalog','big',$item['image']); ?>" class="fancybox" title="<?php echo $item['name']; ?>">
+					<img src="<?php echo insert_image('catalog','small',$item['image']); ?>" alt="<?php echo $item['name']; ?>" class="img-responsive center-block">
+				</a>
+			</div>
+			<?php if (!empty($item['short_description'])): ?>
+			<div class="description desc__bottom"><?php echo $item['short_description']; ?></div>
+			<?php endif; ?>
 			<div class="caption row">
 		
 				<div class="view-bot-left">
@@ -75,7 +79,7 @@ if (@$items) : ?>
 </ul>
 <?php if (@$tree['short_description']) : ?>
 	<div class="item-preview">
-		<h3><?php echo $tree['title']; ?></h3>
+		<h2><?php echo $tree['title']; ?></h2>
 		<div class="">
 			<?php echo nl2br($tree['short_description']); ?>
 		</div>

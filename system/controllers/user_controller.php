@@ -1,7 +1,7 @@
 <?php
 
 class User_Controller {
-	private $_content, $_config, $_table, $_user_id;
+  private $_content, $_config, $_table, $_user_id;
 
 	public function __construct() {
 		

@@ -1,3 +1,11 @@
+<ul class="list-group left-menu">
+	<li>
+		<a href="/recepty/add_recept" class="list-group-item">
+			<span class="glyphicon glyphicon-plus-sign"></span> 
+			<strong>Добавить свой рецепт</strong>
+		</a>
+	</li>			
+</ul>
 <?php
 $razdels = Database::getRows(get_table('catalog_tree'),'prioritet desc',false,"pid=1 and active=1");
 if ($razdels) {

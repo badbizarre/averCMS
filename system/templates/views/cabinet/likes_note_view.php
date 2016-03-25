@@ -14,12 +14,12 @@
 	<?php foreach($items as $item): ?>
 	<div class="forum-item">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<a href="<?php echo insert_image('catalog','big',$item['image']); ?>" class="fancybox">
 					<img src="<?php echo insert_image('catalog','small',$item['image']); ?>" alt="" class="img-responsive">
 				</a>			
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-6">
 				<a href="<?php echo get_product_path($item); ?>" class="forum-item-title"><?php echo $item['name']; ?></a>
 				<div class="forum-sub-title"><?php echo get_category_name($item['id'],true); ?></div>
 			</div>

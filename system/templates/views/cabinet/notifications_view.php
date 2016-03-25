@@ -24,10 +24,11 @@
 					<div><a href="<?php echo get_product_path($item); ?>" class="title-href" title="<?php echo $item['name']; ?>"><?php echo $item['name']; ?></a></div>
 					<div class="title-small"><small><?php echo transform_date($item['date_create'],true).' в '.transform_time($item['date_create']); ?></small></div>
 				</div>
-				<a href="<?php echo insert_image('catalog','big',$item['image']); ?>" class="fancybox" title="<?php echo $item['name']; ?>">
-					<img src="<?php echo insert_image('catalog','small',$item['image']); ?>" alt="<?php echo $item['name']; ?>" class="img-responsive center-block">
-				</a>			
-				
+				<div class="image"> 
+					<a href="<?php echo insert_image('catalog','big',$item['image']); ?>" class="fancybox" title="<?php echo $item['name']; ?>">
+						<img src="<?php echo insert_image('catalog','small',$item['image']); ?>" alt="<?php echo $item['name']; ?>" class="img-responsive center-block">
+					</a>			
+				</div>
 				<div class="caption row">
 			
 					<div class="view-bot-left">

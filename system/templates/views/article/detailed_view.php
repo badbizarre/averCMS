@@ -5,16 +5,16 @@
 	));
 	
 ?>		
-<div class="b-page-content" itemscope itemtype="http://schema.org/Recipe">
+<div class="b-page-content" itemscope itemtype="http://schema.org/ScholarlyArticle">
 	<div class="breadcrumb"><?php echo $breadcrumbs; ?></div>
-	<div style="display: none;" itemprop="name"><?php echo $item['name']; ?></div>
-	<div style="display: none;" itemprop="recipeCategory"><?php echo get_category_name($item['id']); ?></div>
+	<div style="display: none;" itemprop="headline"><?php echo $item['name']; ?></div>
+	<div style="display: none;" itemprop="articleSection"><?php echo get_category_name($item['id']); ?></div>
 	<div class="item-preview">
 		<div class="row">
 			<div class="col-md-12">		
 				<div class="">
 					<a href="<?php echo insert_image($that_path,'big',$item['image']); ?>" class="fancybox" rel="groupe" title="<?php echo $item['name']; ?>">
-						<img src="<?php echo insert_image($that_path,'big',$item['image']); ?>" itemprop="resultPhoto" alt="<?php echo $item['name']; ?>" class="img-responsive center-block">
+						<img src="<?php echo insert_image($that_path,'big',$item['image']); ?>" itemprop="image" alt="<?php echo $item['name']; ?>" class="img-responsive center-block">
 					</a>
 				</div>
 
@@ -32,7 +32,7 @@
 				<?php endif; ?>
 				
 				<div class="">
-					<div class="opisanie"><h4>Способ приготовления</h4> <div itemprop="recipeInstructions"><?php echo nl2br($item['recept']); ?></div></div>
+					<div class="opisanie"><div itemprop="articleBody"><?php echo nl2br($item['recept']); ?></div></div>
 				</div>
 			
 			</div>

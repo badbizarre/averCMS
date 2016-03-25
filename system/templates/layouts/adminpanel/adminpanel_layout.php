@@ -19,6 +19,7 @@
 	
     <script src="/js/library/jquery-2.1.1.js"></script>	
 	<script src="/js/admin/functions.js"></script>
+	<script src="/js/admin/jqgrid_function.js"></script>
 		
 	<!-- Theme style -->
 	<?php foreach(UI::getCSS() as $css): ?>

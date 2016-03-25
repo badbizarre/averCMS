@@ -84,12 +84,13 @@ function get_article_name($id_article,$is_href = false) {
 }
 
 function get_users_variate($id_table,$id_variate,$table_name) {
+
+	$id_user = cmsUser::isSessionSet('user') ? cmsUser::sessionGet('user:id') : 0;
 		
-	$where = 'id_table = '.$id_table.' and table_name="'.$table_name.'" and id_variate = '.$id_variate;	
-	
-	$id_user = cmsUser::sessionGet('user:id');
-	
-	if (!empty($id_user))  $where .=  " and id_user = $id_user";
+	$where = 'id_table = '.$id_table.' and 
+			  table_name="'.$table_name.'" and 
+			  id_variate = '.$id_variate.' and	
+			  id_user = '.$id_user;
 
 	$result = Database::getRows(get_table('users_like'),'id desc',1,$where);
 
@@ -97,9 +98,21 @@ function get_users_variate($id_table,$id_variate,$table_name) {
 	
 }
 
+function get_count_variate($id_table,$id_variate,$table_name) {
+		
+	$where = 'id_table = '.$id_table.' and 
+			  table_name="'.$table_name.'" and 
+			  id_variate = '.$id_variate;	
+
+	$results = Database::getRows(get_table('users_like'),'id desc',false,$where);
+
+	if (!empty($results)) return count($results);
+	
+}
+
 function get_status_class($elem) {
 		
-	return (isset($elem) and !empty($elem['status'])) ? '' : '-empty';
+	return (isset($elem) and !empty($elem)) ? '' : '-empty';
 	
 }
 
@@ -111,14 +124,14 @@ function get_buttons_recept($item,$table_name) {
 	else $that_path = $table_name;
 	
 	$id_table = $item['id'];
-
-	$count_note = ($item['count_note'] > 0) ? $item['count_note'] : '';
+	
+	$count_note = get_count_variate($id_table,2,$table_name);
 			
 	$html .= '<a href="'.$that_path.'" class="btn btn-default btn-sm add-variate" data-variate="2" rel="'.$id_table.'" title="Добавить в заметки">
 		<i class="glyphicon glyphicon-star'.get_status_class(get_users_variate($id_table,2,$table_name)).'"></i> 
 		'.$count_note.'</a> ';
 
-	$count_like = ($item['count_like'] > 0) ? $item['count_like'] : '';
+	$count_like = get_count_variate($id_table,1,$table_name);
 	
 	$html .= '<a href="'.$that_path.'" class="btn btn-default btn-sm add-variate" data-variate="1" rel="'.$id_table.'" title="Мне нравиться">
 		<i class="glyphicon glyphicon-heart'.get_status_class(get_users_variate($id_table,1,$table_name)).'"></i>

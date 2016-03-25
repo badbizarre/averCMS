@@ -60,7 +60,9 @@
 									</div>										
 								</div>
 							</div>
-							
+							<div class="row">
+								<div class="col-sm-12"><small><a href="#"><?php echo $item['current_info']; ?></a></small></div>
+							</div>							
 						</div>
 						<div class="cabinet-description">
 							<div class="row">

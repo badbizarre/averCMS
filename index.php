@@ -83,8 +83,6 @@ if ($config['env']['session_auto_start']) {
 
 load_component(Array('Log', 'Load'));
 
-if(@$_SESSION['user']['manager']!=1) $_SESSION['currency'] = 'byr';  
-	
 $config = $config['components']['load']['autoload'];
 
 Load::library($config['library']);

@@ -11,7 +11,7 @@ class Users_Controller {
 		
 		$this->_table = get_table($this->_page);
 		
-		$this->_content['left'] = Render::view ('cabinet/razdel');
+		$this->_content['left'] = Render::view ('cabinet/razdel').Render::view('catalog/razdel');
   			
 	}
 

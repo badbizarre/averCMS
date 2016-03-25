@@ -68,11 +68,13 @@ $config = array (
         '/^adminpanel$/' => 'adminpanel/adminpanel',
         '/^main$/' => 'page_404',
         '/^page$/' => 'page_404',
-        '/^recept\/(.+)$/' => 'recept/default/$1',
+        '/^recept\/(.+)$/' => 'recept/default/$1',			
         '/^recepty\/search$/' => 'recepty/search',			
         '/^recepty\/update_html$/' => 'recepty/update_html',			
         '/^recepty\/update_comment$/' => 'recepty/update_comment',					
         '/^recepty\/edit_form$/' => 'recepty/edit_form',			
+        '/^recepty\/add_recept$/' => 'recepty/add_recept',			
+        '/^recepty\/save$/' => 'recepty/save',			
 		'/^recepty\/(\d+)$/' => 'recepty/default/$1',
         '/^recepty\/(.+)$/' => 'recepty/detailed/$1',			
 		'/^ingredients\/(\d+)$/' => 'ingredients/default/$1',
@@ -216,6 +218,9 @@ $config = array (
     ),	
 	'users_friends' => Array (
       'table' => 'np_users_friends',
+    ),	
+	'users_recept' => Array (
+      'table' => 'np_users_recept',
     ),		
 	'photos' => Array (
       'table' => 'np_photos',

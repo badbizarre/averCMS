@@ -4,15 +4,14 @@
 
 .item-user {
 	position: relative;
-	height: 220px;	
 }
 
-.item-user img {
-	width: 100px;
+.user-image {
+	margin: 0 -15px 10px;
 }
 
 .user-detail {
-	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .user-detail strong {

@@ -18,7 +18,7 @@
 						</a>
 						<div class="text-center button-panel">
 
-							<button type="submit" class="btn btn-default">Написать сообщение</button>
+							<a href="/cabinet/messages" class="btn btn-default">Написать сообщение</a>
 							<?php echo Friends::get_friend_button($item['id']); ?>
 						</div>
 					</div>
@@ -34,7 +34,9 @@
 									</div>										
 								</div>
 							</div>
-							
+							<div class="row">
+								<div class="col-sm-12"><small><a href="#"><?php echo $item['current_info']; ?></a></small></div>
+							</div>								
 						</div>
 						<div class="cabinet-description">
 							<div class="row">

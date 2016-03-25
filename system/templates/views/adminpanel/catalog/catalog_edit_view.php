@@ -1,15 +1,11 @@
 <?php 
 	UI::addCSS(array(
-		'/css/admin/plugins/chosen/chosen.css',
-		'/css/admin/plugins/summernote/summernote.css',
-		'/css/admin/plugins/summernote/summernote-bs3.css'		
+		'/css/admin/plugins/chosen/chosen.css',	
 	));
 	
 	UI::addJS(array(
 		'/js/library/plugins/chosen/chosen.jquery.js',
 		'/js/library/plugins/chosen/init.js',
-		'/js/library/plugins/summernote/summernote.min.js',
-		'/js/library/plugins/summernote/init.js',
 	));
 	$path = URL::getSegment(2);
 	$full_path = get_url_admin_form(2);
@@ -63,7 +59,7 @@
 									<div id="clone-ingredient">
 										
 										<?php 
-										if (isset($catalog_ingredients)):
+										if (isset($catalog_ingredients) and !empty($catalog_ingredients)):
 										foreach($catalog_ingredients as $elem): 
 										?>
 									

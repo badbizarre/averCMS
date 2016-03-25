@@ -27,6 +27,7 @@ cd D:/github/test/ #Заходим в папку локального репозитория
 #git rm #удаление файла в локальном репозитории
 
 Основная работа с git
+git status
 git add . #Производится индексирование файлов на предмет изменения в них
 git commit -m "Комментарий к изменению" #Сохраняем изменения
 git push -f #Отправляем на сервер GitHub
@@ -34,5 +35,5 @@ git push -f #Отправляем на сервер GitHub
 git init
 git add README.md
 git commit -m "first commit"
-git remote add origin https://github.com/badbizarre/povarenok.git
+git remote add origin https://github.com/badbizarre/averCMS.git
 git push -u origin master

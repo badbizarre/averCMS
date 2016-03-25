@@ -36,9 +36,9 @@ $pages = Database::getRows(get_table('navigation'),'prioritet desc',4,'pid = 0')
 						</li>';   
 					}				
 				}
-				?>	  
+				?>
+
 			</ul>	
-		
 		</div><!-- /.navbar-collapse -->
 	</nav>
 </div>
