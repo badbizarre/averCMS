@@ -191,6 +191,8 @@ class cmsUser {
 
         if ($is_clean) { self::sessionUnset($key); }
 
+		Database::update(self::$_table, array('last_visit'=>date('Y-m-d H:i:s')), 'id='.$value);
+		
         return $value;
 
     }

@@ -13,6 +13,8 @@ function get_html_ingredient($id, $href = true) {
 		
 		$measure_name = Database::getField($table_measure,$elem['id_measure']);
 		
+		$html_posfix = '';
+		
 		if ($elem['kolvo']>0 and $elem['id_measure']>0) $html_posfix =  ' - '.$elem['kolvo'].' '.$measure_name;
 		elseif ($elem['id_measure']>0) $html_posfix = ' - '.$measure_name;
 		elseif ($elem['kolvo']==0 and $elem['id_measure']==0) $html_posfix = '';
@@ -83,33 +85,6 @@ function get_article_name($id_article,$is_href = false) {
 	
 }
 
-function get_users_variate($id_table,$id_variate,$table_name) {
-
-	$id_user = cmsUser::isSessionSet('user') ? cmsUser::sessionGet('user:id') : 0;
-		
-	$where = 'id_table = '.$id_table.' and 
-			  table_name="'.$table_name.'" and 
-			  id_variate = '.$id_variate.' and	
-			  id_user = '.$id_user;
-
-	$result = Database::getRows(get_table('users_like'),'id desc',1,$where);
-
-	return @$result[0];
-	
-}
-
-function get_count_variate($id_table,$id_variate,$table_name) {
-		
-	$where = 'id_table = '.$id_table.' and 
-			  table_name="'.$table_name.'" and 
-			  id_variate = '.$id_variate;	
-
-	$results = Database::getRows(get_table('users_like'),'id desc',false,$where);
-
-	if (!empty($results)) return count($results);
-	
-}
-
 function get_status_class($elem) {
 		
 	return (isset($elem) and !empty($elem)) ? '' : '-empty';
@@ -125,16 +100,16 @@ function get_buttons_recept($item,$table_name) {
 	
 	$id_table = $item['id'];
 	
-	$count_note = get_count_variate($id_table,2,$table_name);
+	$count_note = Users_like::getCountVariate($id_table,2,$table_name);
 			
 	$html .= '<a href="'.$that_path.'" class="btn btn-default btn-sm add-variate" data-variate="2" rel="'.$id_table.'" title="Добавить в заметки">
-		<i class="glyphicon glyphicon-star'.get_status_class(get_users_variate($id_table,2,$table_name)).'"></i> 
+		<i class="glyphicon glyphicon-star'.get_status_class(Users_like::getUsersVariate($id_table,2,$table_name)).'"></i> 
 		'.$count_note.'</a> ';
 
-	$count_like = get_count_variate($id_table,1,$table_name);
+	$count_like = Users_like::getCountVariate($id_table,1,$table_name);
 	
 	$html .= '<a href="'.$that_path.'" class="btn btn-default btn-sm add-variate" data-variate="1" rel="'.$id_table.'" title="Мне нравиться">
-		<i class="glyphicon glyphicon-heart'.get_status_class(get_users_variate($id_table,1,$table_name)).'"></i>
+		<i class="glyphicon glyphicon-heart'.get_status_class(Users_like::getUsersVariate($id_table,1,$table_name)).'"></i>
 		'.$count_like.'</a>';
 
 	return $html;
@@ -156,12 +131,6 @@ function get_count_comment($kolvo) {
 	
 	return $result;
 
-}
-
-function get_comments_where($id_table,$table_name) {
-	$where = 'id_table='.$id_table.' and table_name="'.$table_name.'"';
-	$comments = Database::getRows(get_table('users_comment'),'id asc',false,$where);
-	return $comments;
 }
 
 function html_comment_content($comments) {
@@ -210,33 +179,8 @@ function html_comment_content($comments) {
 	return $html;
 }
 
-function get_dialog_delete($that_path) {
-
-	$html = '<div class="modal fade" id="dialog-remove-comment" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog modal-sm">
-			<form class="form-horizontal form-remove-comment" role="form" action="/'.$that_path.'/update_comment" method="POST">
-				<div class="modal-content">
-					<div class="modal-body">
-						'.html_input('hidden','action','remove').
-						html_input('hidden','id','',array('id'=>'id_comment')).'
-						Удалить этот комментарий навсегда?
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-						<button type="submit" class="btn btn-danger">Удалить</button>
-					</div>				
-				</div>
-			</form>	
-		</div>
-	</div>';
-
-	return $html;
-	
-}
-
 function get_comment_form_add($id,$that_path) {
-	$item = Database::getRow(get_table('users_comment'),$id);
-	
+
 	$html = '';
 	$html .= '<form action="/'.$that_path.'/update_comment" class="add-comment myform" method="POST">'
 				.html_input('hidden','id_table',$id)
@@ -271,6 +215,30 @@ function get_comment_form_edit($id,$that_path) {
 	</form>';
 	
 	return $html;
+}
+
+function get_dialog_delete($that_path) {
+
+	$html = '<div class="modal fade" id="dialog-remove-comment" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<form class="form-horizontal form-remove-comment" role="form" action="/'.$that_path.'/update_comment" method="POST">
+				<div class="modal-content">
+					<div class="modal-body">
+						'.html_input('hidden','action','remove').
+						html_input('hidden','id','',array('id'=>'id_comment')).'
+						Удалить этот комментарий навсегда?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+						<button type="submit" class="btn btn-danger">Удалить</button>
+					</div>				
+				</div>
+			</form>	
+		</div>
+	</div>';
+
+	return $html;
+	
 }
 
 function get_user_card($item) {
@@ -315,3 +283,13 @@ function get_user_card($item) {
 	return $html;		
 	
 }
+
+function get_bridge_by_count($count) {
+	
+	if ($count > 0) return $html_count = '<span class="badge pull-right">'.$count.'</span>';	
+	
+}
+
+
+
+

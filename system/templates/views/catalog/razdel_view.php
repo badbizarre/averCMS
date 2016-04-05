@@ -9,24 +9,33 @@
 <?php
 $razdels = Database::getRows(get_table('catalog_tree'),'prioritet desc',false,"pid=1 and active=1");
 if ($razdels) {
-	UI::addCSS('/css/catalog/razdel.css');
+	UI::addCSS('/css/popup-sidebar.css');
 
 	$url = URL::getSegment(3);
 	
-	echo '<ul class="list-group left-menu">';
+	echo '<div class="popup-sidebar">
+	<ul class="popup-sidebar__nav">';
 		foreach($razdels as $item) {
-			if ($url==$item['path']) $cls = 'active'; else $cls = '';
-			echo '<li><a href="/recepty/'.$item['path'].'" class="list-group-item '.$cls.'"><span class="badge">'.count_product_tree($item['id']).'</span>'.$item['name'].'</a>';
-		if (@$elems = Database::getRows(get_table('catalog_tree'),'prioritet desc',false,"pid=".$item['id']." and active=1")) {
-			echo '<ul class="list-group hidden-sm hidden-xs">';
-				foreach($elems as $elem){
-				echo '<li><a href="/recepty/'.$elem['path'].'" class="list-group-item">'.$elem['name'].' ('.count_product_tree($elem['id']).')</a></li>';
-				}
-			echo '</ul>';
-		}
+			$cls = ($url==$item['path']) ? 'active' : '';
+			echo '<li class="popup-sidebar__item">
+				<a href="/recepty/'.$item['path'].'" class="popup-sidebar__link '.$cls.'">'.$item['name'].'</a>';
+					$elems = Database::getRows(get_table('catalog_tree'),'prioritet desc',false,"pid=".$item['id']." and active=1");
+					if (@$elems) {
+						$elem_p = Database::getRow(get_table('catalog_tree'),$url,'path');						
+						$ul_cls = ($url==$item['path'] or $item['id'] == @$elem_p['pid']) ? 'active' : '';	
+						echo '<ul class="popup-sidebar__item--sublist '.$ul_cls.' hidden-sm hidden-xs">';
+							foreach($elems as $elem){
+							$cls_2 = ($url==$elem['path'] or $elem['id'] == @$elem_p['pid']) ? 'active' : '';	
+							echo '<li class="popup-sidebar__item">
+								<a href="/recepty/'.$elem['path'].'" class="popup-sidebar__link '.$cls_2.'">'.$elem['name'].'</a>
+							</li>';
+							}
+						echo '</ul>';
+					}
 			echo '</li>';
 		}
-	echo '</ul>';
+	echo '</ul>
+	</div>';
 
 }
 

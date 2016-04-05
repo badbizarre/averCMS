@@ -55,8 +55,7 @@
 								<div class="col-sm-6"><?php echo $item['name']; ?></div>
 								<div class="col-sm-6">
 									<div class="text-right">
-										<small>Дата регистрации:</small>
-										<small><?php echo transform_date($item['date_create']); ?></small>
+										<small>заходил <?php echo transform_date($item['last_visit'],true).' в '.transform_time($item['last_visit']); ?></small>
 									</div>										
 								</div>
 							</div>

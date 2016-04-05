@@ -37,7 +37,7 @@ if (@$items) : ?>
 					<div class="buttons-recept"><?php echo get_buttons_recept($item,$that_path); ?></div>
 				</div>
 				<?php 
-				$comments = Database::getRows(get_table('users_comment'),'id asc',false,'table_name="'.$that_path.'" and id_table='.$item['id']); 
+				$comments = Database::getRows(get_table('users_comment'),'id asc',false,'active = 1 and table_name="'.$that_path.'" and id_table='.$item['id']); 
 				if (empty($comments)): ?>
 				<div class="view-bot-center">
 					<div class="input-comment top-comment" rel="<?php echo $item['id']; ?>" title="Прокомментировать">Прокомментировать</div>

@@ -349,8 +349,8 @@ function transform_date($date,$min_date = false) {
 	$date_now = date('Y-m-d');
 	$yesterday = date('Y-m-d',mktime(0, 0, 0, date('m')  , date('d')-1, date('Y')));
 	
-	if ($date_now == $date) $result = 'Сегодня';
-	elseif ($yesterday == $date) $result = 'Вчера';
+	if ($date_now == $date) $result = 'cегодня';
+	elseif ($yesterday == $date) $result = 'вчера';
 	elseif ($min_date) {
 		$month = Array('янв', 'фев', 'мар', 'апр', 'мая', 'июня', 'июля', 'авг', 'сен', 'окт', 'ноя', 'дек');
 		$result = date('d', strtotime($date)).' '.$month[date('m', strtotime($date))-1];

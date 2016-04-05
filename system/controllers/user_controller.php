@@ -11,7 +11,7 @@ class User_Controller {
 	
 		$this->_table_users_friends = get_table('users_friends');
 		
-		$this->_content['left'] = Render::view ('cabinet/razdel');
+		$this->_content['left'] = Render::view('cabinet/razdel').Render::view('catalog/razdel');
   			
 	}
 

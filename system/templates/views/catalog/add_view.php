@@ -1,13 +1,9 @@
 <?php 
-	UI::addCSS(array(
-		'/css/admin/plugins/chosen/chosen.css',		
-		'/css/admin/font-awesome/css/font-awesome.css',		
+	UI::addCSS(array(	
 		'/css/catalog/add.css',		
 	));
 	
 	UI::addJS(array(
-		'/js/library/plugins/chosen/chosen.jquery.js',
-		'/js/library/plugins/chosen/init.js',
 		'/js/admin/admin.js',
 		'/js/admin/functions.js',
 	));

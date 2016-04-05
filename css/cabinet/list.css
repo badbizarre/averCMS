@@ -48,7 +48,7 @@
 	background: #f1f1f1;
 }
 
-.button-panel .btn {
+.button-panel__btn {
 	display: block;
 	width: 100%;
 	margin: 5px 0;
@@ -58,4 +58,21 @@
 	display: block;
 	padding: 5px 10px;
 	text-align: center;
+}
+
+
+.dialog-message__user {
+	margin: 0 0 15px;
+}
+.dialog-message__image {
+	display: inline-block;
+	vertical-align: top;
+}
+.dialog-message__text {
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px 15px 0 15px;
+}
+.dialog-message__image img {
+	height: 50px;
 }

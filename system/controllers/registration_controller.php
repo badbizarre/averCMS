@@ -7,7 +7,7 @@ class Registration_Controller {
 	
 		$this->_table = get_table('users');
 	
-		$this->_content['left'] = Render::view ('catalog/razdel');
+		$this->_content['left'] = Render::view('cabinet/razdel').Render::view('catalog/razdel');
   		
 	}
 

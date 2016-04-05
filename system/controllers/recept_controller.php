@@ -13,7 +13,7 @@ class Recept_Controller {
 		
 		$this->_table_tree = get_table($this->_page.'_tree');
 		
-		$this->_content['left'] = Render::view ('catalog/razdel');
+		$this->_content['left'] = Render::view('cabinet/razdel').Render::view('catalog/razdel');
   		
 	}
 
@@ -32,7 +32,7 @@ class Recept_Controller {
 			$html_ingredient = get_html_ingredient($item['id']);
 			$breadcrumbs = get_crumbs_category(Database::getField(get_table('catalog_categories'),$item['id'],'id_catalog','id_tree'));
 
-			$comments = get_comments_where($item['id'],$this->_page);
+			$comments = Comments::getComments($item['id'],$this->_page);
 			
 			$elem = Database::getRow(get_table('users_recept'),$item['id'],'id_catalog');
 			$author = array();

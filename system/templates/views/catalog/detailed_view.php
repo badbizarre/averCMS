@@ -27,7 +27,7 @@
 					<div class="row author">
 						<div class="col-sm-3">
 							<a href="/users/id<?php echo $author['id']; ?>">
-								<img src="<?php echo insert_image('users','big',$author['image']); ?>" class="img-responsive" />
+								<img src="<?php echo insert_image('users','small',$author['image']); ?>" class="img-responsive" />
 							</a>
 						</div>
 						<div class="col-sm-9">

@@ -1,1 +1,1327 @@
-﻿
+==================================
+Date: 03-04-2016 17:10:35
+Type: E_NOTICE
+Message: Undefined variable: message
+File: D:\xampp\htdocs\system\templates\views\users\user_info_view.php
+Line: 32
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_REFERER] => http://127.0.0.1/users
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; PHPSESSID=7c6lnmdgu24nim019253j9slm3
+    [HTTP_CONNECTION] => keep-alive
+    [HTTP_CACHE_CONTROL] => max-age=0
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 59504
+    [REDIRECT_URL] => /users/id1
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /users/id1
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /users/id1
+    [PATH_TRANSLATED] => redirect:\index.php\users\id1\id1
+    [PHP_SELF] => /index.php/users/id1
+    [REQUEST_TIME_FLOAT] => 1459692635.618
+    [REQUEST_TIME] => 1459692635
+)
+
+$_GET = Array
+(
+    [id1] => 
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [PHPSESSID] => 7c6lnmdgu24nim019253j9slm3
+)
+
+$_SESSION = Array
+(
+    [currency] => usd
+    [collection] => Array
+        (
+        )
+
+    [user] => Array
+        (
+            [id] => 3
+        )
+
+)
+------------------
+TRACE
+
+#0  Log::getDebugBacktrace() called at [D:\xampp\htdocs\system\components\Log.php:171]
+#1  Log::_getLogErrorMessage(8, Undefined variable: message, D:\xampp\htdocs\system\templates\views\users\user_info_view.php, 32) called at [D:\xampp\htdocs\system\components\Log.php:62]
+#2  Log::myErrorHandler(8, Undefined variable: message, D:\xampp\htdocs\system\templates\views\users\user_info_view.php, 32, Array ([path] => system/templates/views/users/user_info_view.php,[data] => Array ([item] => Array ([id] => 1,[name] => Сергей,[email] => madbizarre@yandex.ru,[password] => 5bde6a8e31ef61f98a40baf5eee31b08,[image] => 2_avatar.jpg,[active] => 1,[date_create] => 2015-10-01,[auth_token] => f98e13543e19fb5714324ac8e8730599,[birthday_day] => 8,[birthday_month] => 4,[birthday_year] => 1987,[city] => ,[current_info] => ,[about] => ,[interes] => ,[sex] => 0,[last_visit] => 0000-00-00 00:00:00),[image] => /assets/images/users/big/2_avatar.jpg,[sex] => ),[item] => Array ([id] => 1,[name] => Сергей,[email] => madbizarre@yandex.ru,[password] => 5bde6a8e31ef61f98a40baf5eee31b08,[image] => 2_avatar.jpg,[active] => 1,[date_create] => 2015-10-01,[auth_token] => f98e13543e19fb5714324ac8e8730599,[birthday_day] => 8,[birthday_month] => 4,[birthday_year] => 1987,[city] => ,[current_info] => ,[about] => ,[interes] => ,[sex] => 0,[last_visit] => 0000-00-00 00:00:00),[image] => /assets/images/users/big/2_avatar.jpg,[sex] => )) called at [D:\xampp\htdocs\system\templates\views\users\user_info_view.php:32]
+#3  require_once(D:\xampp\htdocs\system\templates\views\users\user_info_view.php) called at [D:\xampp\htdocs\system\components\Render.php:50]
+#4  Render::_render(system/templates/views/users/user_info_view.php, Array ([item] => Array ([id] => 1,[name] => Сергей,[email] => madbizarre@yandex.ru,[password] => 5bde6a8e31ef61f98a40baf5eee31b08,[image] => 2_avatar.jpg,[active] => 1,[date_create] => 2015-10-01,[auth_token] => f98e13543e19fb5714324ac8e8730599,[birthday_day] => 8,[birthday_month] => 4,[birthday_year] => 1987,[city] => ,[current_info] => ,[about] => ,[interes] => ,[sex] => 0,[last_visit] => 0000-00-00 00:00:00),[image] => /assets/images/users/big/2_avatar.jpg,[sex] => )) called at [D:\xampp\htdocs\system\components\Render.php:16]
+#5  Render::view(users/user_info, Array ([item] => Array ([id] => 1,[name] => Сергей,[email] => madbizarre@yandex.ru,[password] => 5bde6a8e31ef61f98a40baf5eee31b08,[image] => 2_avatar.jpg,[active] => 1,[date_create] => 2015-10-01,[auth_token] => f98e13543e19fb5714324ac8e8730599,[birthday_day] => 8,[birthday_month] => 4,[birthday_year] => 1987,[city] => ,[current_info] => ,[about] => ,[interes] => ,[sex] => 0,[last_visit] => 0000-00-00 00:00:00),[image] => /assets/images/users/big/2_avatar.jpg,[sex] => )) called at [D:\xampp\htdocs\system\controllers\users_controller.php:58]
+#6  Users_Controller->detailedAction() called at [D:\xampp\htdocs\system\components\Load.php:49]
+#7  Load::controller(users, detailedAction) called at [D:\xampp\htdocs\system\controllers\main_controller.php:15]
+#8  Main_Controller->__construct() called at [D:\xampp\htdocs\system\components\Load.php:42]
+#9  Load::controller(main) called at [D:\xampp\htdocs\index.php:91]
+==================================
+==================================
+Date: 03-04-2016 17:10:35
+Type: E_NOTICE
+Message: Undefined variable: message
+File: D:\xampp\htdocs\system\templates\views\users\user_info_view.php
+Line: 32
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_REFERER] => http://127.0.0.1/users
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; PHPSESSID=7c6lnmdgu24nim019253j9slm3
+    [HTTP_CONNECTION] => keep-alive
+    [HTTP_CACHE_CONTROL] => max-age=0
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 59504
+    [REDIRECT_URL] => /users/id1
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /users/id1
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /users/id1
+    [PATH_TRANSLATED] => redirect:\index.php\users\id1\id1
+    [PHP_SELF] => /index.php/users/id1
+    [REQUEST_TIME_FLOAT] => 1459692635.618
+    [REQUEST_TIME] => 1459692635
+)
+
+$_GET = Array
+(
+    [id1] => 
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [PHPSESSID] => 7c6lnmdgu24nim019253j9slm3
+)
+
+$_SESSION = Array
+(
+    [currency] => usd
+    [collection] => Array
+        (
+        )
+
+    [user] => Array
+        (
+            [id] => 3
+        )
+
+)
+------------------
+TRACE
+
+#0  Log::getDebugBacktrace() called at [D:\xampp\htdocs\system\components\Log.php:171]
+#1  Log::_getLogErrorMessage(8, Undefined variable: message, D:\xampp\htdocs\system\templates\views\users\user_info_view.php, 32) called at [D:\xampp\htdocs\system\components\Log.php:62]
+#2  Log::myErrorHandler(8, Undefined variable: message, D:\xampp\htdocs\system\templates\views\users\user_info_view.php, 32, Array ([path] => system/templates/views/users/user_info_view.php,[data] => Array ([item] => Array ([id] => 1,[name] => Сергей,[email] => madbizarre@yandex.ru,[password] => 5bde6a8e31ef61f98a40baf5eee31b08,[image] => 2_avatar.jpg,[active] => 1,[date_create] => 2015-10-01,[auth_token] => f98e13543e19fb5714324ac8e8730599,[birthday_day] => 8,[birthday_month] => 4,[birthday_year] => 1987,[city] => ,[current_info] => ,[about] => ,[interes] => ,[sex] => 0,[last_visit] => 0000-00-00 00:00:00),[image] => /assets/images/users/big/2_avatar.jpg,[sex] => ),[item] => Array ([id] => 1,[name] => Сергей,[email] => madbizarre@yandex.ru,[password] => 5bde6a8e31ef61f98a40baf5eee31b08,[image] => 2_avatar.jpg,[active] => 1,[date_create] => 2015-10-01,[auth_token] => f98e13543e19fb5714324ac8e8730599,[birthday_day] => 8,[birthday_month] => 4,[birthday_year] => 1987,[city] => ,[current_info] => ,[about] => ,[interes] => ,[sex] => 0,[last_visit] => 0000-00-00 00:00:00),[image] => /assets/images/users/big/2_avatar.jpg,[sex] => )) called at [D:\xampp\htdocs\system\templates\views\users\user_info_view.php:32]
+#3  require_once(D:\xampp\htdocs\system\templates\views\users\user_info_view.php) called at [D:\xampp\htdocs\system\components\Render.php:50]
+#4  Render::_render(system/templates/views/users/user_info_view.php, Array ([item] => Array ([id] => 1,[name] => Сергей,[email] => madbizarre@yandex.ru,[password] => 5bde6a8e31ef61f98a40baf5eee31b08,[image] => 2_avatar.jpg,[active] => 1,[date_create] => 2015-10-01,[auth_token] => f98e13543e19fb5714324ac8e8730599,[birthday_day] => 8,[birthday_month] => 4,[birthday_year] => 1987,[city] => ,[current_info] => ,[about] => ,[interes] => ,[sex] => 0,[last_visit] => 0000-00-00 00:00:00),[image] => /assets/images/users/big/2_avatar.jpg,[sex] => )) called at [D:\xampp\htdocs\system\components\Render.php:16]
+#5  Render::view(users/user_info, Array ([item] => Array ([id] => 1,[name] => Сергей,[email] => madbizarre@yandex.ru,[password] => 5bde6a8e31ef61f98a40baf5eee31b08,[image] => 2_avatar.jpg,[active] => 1,[date_create] => 2015-10-01,[auth_token] => f98e13543e19fb5714324ac8e8730599,[birthday_day] => 8,[birthday_month] => 4,[birthday_year] => 1987,[city] => ,[current_info] => ,[about] => ,[interes] => ,[sex] => 0,[last_visit] => 0000-00-00 00:00:00),[image] => /assets/images/users/big/2_avatar.jpg,[sex] => )) called at [D:\xampp\htdocs\system\controllers\users_controller.php:58]
+#6  Users_Controller->detailedAction() called at [D:\xampp\htdocs\system\components\Load.php:49]
+#7  Load::controller(users, detailedAction) called at [D:\xampp\htdocs\system\controllers\main_controller.php:15]
+#8  Main_Controller->__construct() called at [D:\xampp\htdocs\system\components\Load.php:42]
+#9  Load::controller(main) called at [D:\xampp\htdocs\index.php:91]
+==================================
+==================================
+Date: 03-04-2016 19:19:37
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_CONNECTION] => keep-alive
+    [HTTP_ACCEPT] => */*
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 YaBrowser/16.2.0.3539 Safari/537.36
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate, sdch
+    [HTTP_ACCEPT_LANGUAGE] => ru,en;q=0.8
+    [HTTP_COOKIE] => _ga=GA1.1.134904155.1456764147
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 62087
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459700377.821
+    [REQUEST_TIME] => 1459700377
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [_ga] => GA1.1.134904155.1456764147
+)
+
+$_SESSION = Array
+(
+)
+==================================
+==================================
+Date: 04-04-2016 13:45:06
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; _ym_isad=2; PHPSESSID=s5nhjv8rk77t6g5pkddo4en165
+    [HTTP_CONNECTION] => keep-alive
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 53519
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459766706.246
+    [REQUEST_TIME] => 1459766706
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [_ym_isad] => 2
+    [PHPSESSID] => s5nhjv8rk77t6g5pkddo4en165
+)
+
+$_SESSION = Array
+(
+)
+==================================
+==================================
+Date: 04-04-2016 13:45:06
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; _ym_isad=2; PHPSESSID=s5nhjv8rk77t6g5pkddo4en165
+    [HTTP_CONNECTION] => keep-alive
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 53521
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459766706.298
+    [REQUEST_TIME] => 1459766706
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [_ym_isad] => 2
+    [PHPSESSID] => s5nhjv8rk77t6g5pkddo4en165
+)
+
+$_SESSION = Array
+(
+)
+==================================
+==================================
+Date: 04-04-2016 17:02:19
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_CONNECTION] => keep-alive
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36
+    [HTTP_ACCEPT] => */*
+    [HTTP_REFERER] => http://127.0.0.1/
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate, sdch
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4
+    [HTTP_COOKIE] => acms[auth]=f98e13543e19fb5714324ac8e8730599; PHPSESSID=rie86lertsd6ircbc5it39rue0
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 57433
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459778539.406
+    [REQUEST_TIME] => 1459778539
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [acms] => Array
+        (
+            [auth] => f98e13543e19fb5714324ac8e8730599
+        )
+
+    [PHPSESSID] => rie86lertsd6ircbc5it39rue0
+)
+
+$_SESSION = Array
+(
+    [user] => Array
+        (
+            [id] => 1
+        )
+
+)
+==================================
+==================================
+Date: 04-04-2016 17:12:10
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; acms[auth]=36a26d18729c352ba0a5a3bb52d2b9db; PHPSESSID=s5nhjv8rk77t6g5pkddo4en165
+    [HTTP_CONNECTION] => keep-alive
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 49903
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459779130.846
+    [REQUEST_TIME] => 1459779130
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [acms] => Array
+        (
+            [auth] => 36a26d18729c352ba0a5a3bb52d2b9db
+        )
+
+    [PHPSESSID] => s5nhjv8rk77t6g5pkddo4en165
+)
+
+$_SESSION = Array
+(
+    [currency] => usd
+    [user] => Array
+        (
+            [id] => 3
+        )
+
+)
+==================================
+==================================
+Date: 04-04-2016 17:12:11
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; acms[auth]=36a26d18729c352ba0a5a3bb52d2b9db; PHPSESSID=s5nhjv8rk77t6g5pkddo4en165
+    [HTTP_CONNECTION] => keep-alive
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 49908
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459779130.987
+    [REQUEST_TIME] => 1459779130
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [acms] => Array
+        (
+            [auth] => 36a26d18729c352ba0a5a3bb52d2b9db
+        )
+
+    [PHPSESSID] => s5nhjv8rk77t6g5pkddo4en165
+)
+
+$_SESSION = Array
+(
+    [currency] => usd
+    [user] => Array
+        (
+            [id] => 3
+        )
+
+)
+==================================
+==================================
+Date: 04-04-2016 17:12:11
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; acms[auth]=36a26d18729c352ba0a5a3bb52d2b9db; PHPSESSID=s5nhjv8rk77t6g5pkddo4en165
+    [HTTP_CONNECTION] => keep-alive
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 49910
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459779130.998
+    [REQUEST_TIME] => 1459779130
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [acms] => Array
+        (
+            [auth] => 36a26d18729c352ba0a5a3bb52d2b9db
+        )
+
+    [PHPSESSID] => s5nhjv8rk77t6g5pkddo4en165
+)
+
+$_SESSION = Array
+(
+    [currency] => usd
+    [user] => Array
+        (
+            [id] => 3
+        )
+
+)
+==================================
+==================================
+Date: 04-04-2016 17:12:11
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; acms[auth]=36a26d18729c352ba0a5a3bb52d2b9db; PHPSESSID=s5nhjv8rk77t6g5pkddo4en165
+    [HTTP_CONNECTION] => keep-alive
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 49909
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459779131.003
+    [REQUEST_TIME] => 1459779131
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [acms] => Array
+        (
+            [auth] => 36a26d18729c352ba0a5a3bb52d2b9db
+        )
+
+    [PHPSESSID] => s5nhjv8rk77t6g5pkddo4en165
+)
+
+$_SESSION = Array
+(
+    [currency] => usd
+    [user] => Array
+        (
+            [id] => 3
+        )
+
+)
+==================================
+==================================
+Date: 04-04-2016 17:54:20
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_CONNECTION] => keep-alive
+    [HTTP_ACCEPT] => */*
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 YaBrowser/16.2.0.3539 Safari/537.36
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate, sdch
+    [HTTP_ACCEPT_LANGUAGE] => ru,en;q=0.8
+    [HTTP_COOKIE] => _ga=GA1.1.134904155.1456764147
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 50593
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459781660.255
+    [REQUEST_TIME] => 1459781660
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [_ga] => GA1.1.134904155.1456764147
+)
+
+$_SESSION = Array
+(
+)
+==================================
+==================================
+Date: 04-04-2016 19:50:35
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_CONNECTION] => keep-alive
+    [HTTP_ACCEPT] => */*
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 YaBrowser/16.2.0.3539 Safari/537.36
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate, sdch
+    [HTTP_ACCEPT_LANGUAGE] => ru,en;q=0.8
+    [HTTP_COOKIE] => _ga=GA1.1.134904155.1456764147
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 56533
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459788635.719
+    [REQUEST_TIME] => 1459788635
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [_ga] => GA1.1.134904155.1456764147
+)
+
+$_SESSION = Array
+(
+)
+==================================
+==================================
+Date: 05-04-2016 14:11:15
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; acms[auth]=36a26d18729c352ba0a5a3bb52d2b9db; PHPSESSID=uddsap63732l1egc8c58fs5pu4
+    [HTTP_CONNECTION] => keep-alive
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 50368
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459854675.613
+    [REQUEST_TIME] => 1459854675
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [acms] => Array
+        (
+            [auth] => 36a26d18729c352ba0a5a3bb52d2b9db
+        )
+
+    [PHPSESSID] => uddsap63732l1egc8c58fs5pu4
+)
+
+$_SESSION = Array
+(
+    [user] => Array
+        (
+            [id] => 3
+        )
+
+)
+==================================
+==================================
+Date: 05-04-2016 14:11:15
+Message: Страница не существует
+------------------
+VARS
+
+$_SERVER = Array
+(
+    [REDIRECT_MIBDIRS] => D:/xampp/php/extras/mibs
+    [REDIRECT_MYSQL_HOME] => \xampp\mysql\bin
+    [REDIRECT_OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [REDIRECT_PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [REDIRECT_PHPRC] => \xampp\php
+    [REDIRECT_TMP] => \xampp\tmp
+    [REDIRECT_STATUS] => 200
+    [MIBDIRS] => D:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => D:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => 127.0.0.1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    [HTTP_ACCEPT_LANGUAGE] => ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => login=madbizarre; pass=j3qq4h7h2v; _ym_uid=1446466934979138347; jv_visits_count_SnnfODl38I=2; jv_client_id_SnnfODl38I=7551.0ZmbjiUCF6PZh53L%2F1h7W2lPFyK7TbRiEB1S88wHk5A; _ga=GA1.1.856071082.1446640200; email=madbizarre%40yandex.ru; __utma=96992031.856071082.1446640200.1456078081.1456133645.9; __utmz=96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); password=j3qq4h7h2v; acms[auth]=36a26d18729c352ba0a5a3bb52d2b9db; PHPSESSID=uddsap63732l1egc8c58fs5pu4
+    [HTTP_CONNECTION] => keep-alive
+    [PATH] => C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Users\Bizarre\AppData\Roaming\npm
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => <address>Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9 Server at 127.0.0.1 Port 80</address>
+
+    [SERVER_SOFTWARE] => Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 80
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => D:/xampp/htdocs/index.php
+    [REMOTE_PORT] => 50370
+    [REDIRECT_URL] => /favicon.ico
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /favicon.ico
+    [SCRIPT_NAME] => /index.php
+    [PATH_INFO] => /favicon.ico
+    [PATH_TRANSLATED] => redirect:\index.php\favicon.ico
+    [PHP_SELF] => /index.php/favicon.ico
+    [REQUEST_TIME_FLOAT] => 1459854675.689
+    [REQUEST_TIME] => 1459854675
+)
+
+$_GET = Array
+(
+)
+
+$_POST = Array
+(
+)
+
+$_COOKIE = Array
+(
+    [login] => madbizarre
+    [pass] => j3qq4h7h2v
+    [_ym_uid] => 1446466934979138347
+    [jv_visits_count_SnnfODl38I] => 2
+    [jv_client_id_SnnfODl38I] => 7551.0ZmbjiUCF6PZh53L/1h7W2lPFyK7TbRiEB1S88wHk5A
+    [_ga] => GA1.1.856071082.1446640200
+    [email] => madbizarre@yandex.ru
+    [__utma] => 96992031.856071082.1446640200.1456078081.1456133645.9
+    [__utmz] => 96992031.1455453106.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+    [password] => j3qq4h7h2v
+    [acms] => Array
+        (
+            [auth] => 36a26d18729c352ba0a5a3bb52d2b9db
+        )
+
+    [PHPSESSID] => uddsap63732l1egc8c58fs5pu4
+)
+
+$_SESSION = Array
+(
+    [user] => Array
+        (
+            [id] => 3
+        )
+
+)
+==================================

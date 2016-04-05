@@ -1,0 +1,67 @@
+.message__line {
+	padding: 10px;
+	position: relative;
+	cursor: pointer;
+	border-top: 1px solid #e7e7e7;
+}
+
+.message__line:hover {
+	background: #f3f3f3;
+}
+.message__line--noread {
+	background: #E4E4E4;	
+}
+
+.message__block-text {
+	padding: 10px;	
+}
+.message__remove-btn {
+	z-index: 999;
+	display: none;
+	position: absolute;
+	right: 15px;
+	top: 4px;
+}
+.message__line:hover .message__remove-btn {
+	display: block;
+}
+
+.message__name-user,
+.message__date {
+
+}
+
+.message__kolvo {
+	font-size: 11px;
+	color: #777;
+}
+
+.message__name-user a {
+	font-weight: bold;
+}
+
+.message__date {
+	font-size: 11px;
+	color: #999;
+}
+
+.message__image--small {
+	max-width: 50px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.message__text {
+	width: 80%;
+	display: inline-block;
+	vertical-align: top;	
+}
+
+.message__comment {
+	margin: 0px 0 0 10px;
+	font-size: 12px;
+	color: #555;
+	height: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}

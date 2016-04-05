@@ -4,13 +4,10 @@ class Cabinet_Controller {
 	private $_table, $_content;
 
 	public function __construct() {	
-	
-		if (!cmsUser::isSessionSet('user')) header("Location: /");
-	
+
 		$this->_page = URL::getSegment(1);
 		$this->_table = get_table('users');
 		
-		$this->_table_users_like = get_table('users_like');
 		$this->_table_catalog = get_table('catalog');
 		$this->_table_users_friends = get_table('users_friends');
 		
@@ -19,12 +16,17 @@ class Cabinet_Controller {
 		
 		$this->_id_user = cmsUser::sessionGet('user:id');
 		
-		$this->_content['left'] = Render::view ('cabinet/razdel');
-  		
+		$this->_content['left'] = Render::view('cabinet/razdel').Render::view('catalog/razdel');
+	
+		if (!cmsUser::isSessionSet('user')) {
+			header("Location: /");
+			return;
+		}
+		
 	}
 
 	public function defaultAction() {
-	
+
 		$item = Database::getRow($this->_table,cmsUser::sessionGet('user:id'));
 		$image = insert_image('users','big',$item['image']);
 
@@ -55,10 +57,8 @@ class Cabinet_Controller {
 	}
 	
 	public function likes_noteAction() {
-	
 
-	
-		$ids = Database::getRows($this->_table_users_like,'id asc',false,'id_user = '.$this->_id_user.' and table_name="catalog"');
+		$ids = Users_like::getIds('catalog');
 		$ids_html = get_keys_items($ids,'id_table');
 		
 		$where = "id IN($ids_html)";
@@ -99,7 +99,7 @@ class Cabinet_Controller {
 		
 		$this->_content['h1'] = 'Мои ответы';
 
-		$comments = Database::getRows(get_table('users_comment'),'id desc',false,'id_user='.$this->_id_user.' and table_name="catalog"');
+		$comments = Database::getRows(get_table('users_comment'),'id desc',false,'id_user='.$this->_id_user.' and table_name="catalog" and active=1');
 		$ids_html = get_keys_items($comments,'id_table');
 		$where = "id IN($ids_html)";
 		$items = Database::getRows($this->_table_catalog,'id asc',false,$where);
@@ -201,17 +201,5 @@ class Cabinet_Controller {
 		echo json_encode($response);
 		
 	}
- 	
-	public function messagesAction() {
-		
-		$this->_content['h1'] = 'Мои сообщения';
 
-		$this->_content['content'] = Render::view ($this->_page.'/messages',array(
-
-		));
-	
-		Render::layout('page',  $this->_content);	
-	
-	}
-   
 }

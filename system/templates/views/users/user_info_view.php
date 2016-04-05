@@ -1,6 +1,6 @@
 <?php 
 	UI::addCSS(array(
-		'/css/cabinet/list.css'
+		'/css/cabinet/list.css',
 	));	
 ?>
 <div class="row">
@@ -16,9 +16,8 @@
 						<a href="<?php echo $image; ?>" class="fancybox">
 							<img src="<?php echo $image; ?>" alt="" class="img-responsive">		
 						</a>
-						<div class="text-center button-panel">
-
-							<a href="/cabinet/messages" class="btn btn-default">Написать сообщение</a>
+						<div class="button-panel">
+							<?php echo Messages::getMessageButton($item['id']); ?>
 							<?php echo Friends::get_friend_button($item['id']); ?>
 						</div>
 					</div>
@@ -29,8 +28,7 @@
 								<div class="col-sm-6"><?php echo $item['name']; ?></div>
 								<div class="col-sm-6">
 									<div class="text-right">
-										<small>Дата регистрации:</small>
-										<small><?php echo transform_date($item['date_create']); ?></small>
+										<small>заходил <?php echo transform_date($item['last_visit'],true).' в '.transform_time($item['last_visit']); ?></small>
 									</div>										
 								</div>
 							</div>

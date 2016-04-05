@@ -1,0 +1,68 @@
+.dialog__wrap {
+	height: 500px;	
+	overflow: auto;
+}
+
+.dialog__line {
+	padding: 10px;
+	position: relative;
+	cursor: pointer;
+}
+.dialog__line--noread,
+.dialog__line:hover {
+	background: #f7f7f7;
+}
+.dialog__block-text {
+	width: 95%;
+}
+.dialog__remove-btn {
+	display: none;
+	position: absolute;
+	right: 15px;
+	top: 4px;
+}
+.dialog__line:hover .dialog__remove-btn {
+	display: block;
+}
+
+.dialog__name-user,
+.dialog__date {
+	display: inline-block;
+	vertical-align: bottom;
+	width: 50%;
+}
+
+.dialog__name-user a {
+	font-weight: bold;
+}
+
+.dialog__date {
+	font-size: 11px;
+	color: #999;
+	width: 49%;
+}
+
+.dialog__comment {
+	margin: 5px 0px;
+	font-size: 12px;
+	color: #555;
+}
+
+.dialog__controls-msg {
+	margin-top: 15px;
+	padding: 15px;
+	border-top: 1px solid #DAE1E8;
+	background: #F2F2F2;
+}
+
+.dialog__controls-btns {
+	margin-top: 15px;
+}
+
+.dialog__controls-img {
+	margin-top: 10px;
+}
+
+.dialog__controls-textarea {
+	min-height: 100px;
+}

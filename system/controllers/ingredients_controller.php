@@ -11,7 +11,7 @@ class Ingredients_Controller {
 		$this->_table_catalog = get_table('catalog');
 		$this->_config_catalog = Config::getParam('modules->catalog'); 
 	
-		$this->_content['left'] = Render::view ('catalog/razdel');
+		$this->_content['left'] = Render::view('cabinet/razdel').Render::view('catalog/razdel');
   		
 	}
 

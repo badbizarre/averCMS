@@ -37,12 +37,20 @@
 	<link href="/css/admin/plugins/iCheck/custom.css" rel="stylesheet">	 
 	<script src="/js/library/plugins/iCheck/icheck.min.js"></script>	
 
+	 <!-- chosen -->
+	<link rel="stylesheet" type="text/css" href="/css/admin/plugins/chosen/chosen.css" />	
+	<link rel="stylesheet" type="text/css" href="/css/admin/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="/css/chosen.css" />	
+	<script src="/js/library/plugins/chosen/chosen.jquery.js"></script>	
+	<script src="/js/library/plugins/chosen/init.js"></script>	
+
 	<?php foreach(UI::getJS() as $js): ?>
 		<script type="text/javascript" src="<?php echo $js; ?>" ></script>
 	<?php endforeach; ?>
 	
 	<script type="text/javascript" src="/js/site/main.js"></script>
 	<script type="text/javascript" src="/js/site/aver-comment.js"></script>
+	<script type="text/javascript" src="/js/site/aver-messages.js"></script>
 
 </head>
 
@@ -143,11 +151,11 @@
 			<div class="footer">
 
 				<div class="text-center">
-					<div class="footer-va">
+					<div class="footer-copyright">
 						&copy; 2015–<?php echo date('Y'); ?> <a href="http://povarenok.by/">Povarenok.by</a>	
 					</div>
-					<div class="pull-right">
-						<div class="schetchiki">
+					<div class="footer-va__schetchiki">
+						<div class="footer-va__body">
 							<?php Render::view('schetchik', '', TRUE); ?>			
 						</div>		
 					</div>

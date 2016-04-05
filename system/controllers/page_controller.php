@@ -5,7 +5,7 @@ class Page_Controller{
 
 	public function __construct() {	
 	
-		$this->_content['left'] = Render::view ('catalog/razdel');
+		$this->_content['left'] = Render::view('cabinet/razdel').Render::view('catalog/razdel');
   	
 	}
 

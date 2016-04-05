@@ -20,15 +20,13 @@ class Recepty_Controller {
 		$this->_table_measures = get_table('measures');
 		
 		$this->_table_cat = get_table($this->_page.'_categories');
-		
-		$this->_table_comment = get_table('users_comment');
-		
-		$this->_table_users_like = get_table('users_like');
-		
+
 		$this->_table_users_recept = get_table('users_recept');
 		
-		$this->_content['left'] = Render::view($this->_page.'/razdel').Render::view('cabinet/razdel');
-  			
+		$this->_content['left'] = Render::view('cabinet/razdel').Render::view('catalog/razdel');
+ 		
+		$this->_id_user = cmsUser::sessionGet('user:id'); 	
+		
 	}
 
 	public function defaultAction() {
@@ -134,54 +132,27 @@ class Recepty_Controller {
 		$response = array();
 		$response['succes'] = false;
 		
-		/* variate, 1: like, 2: note */
-
-		if (isset($_POST['variate'])) {
-
-			if (isset($_POST['id_table']) and !empty($_POST['id_table'])) {
-				$id_table = $_POST['id_table'];
-				$id_user = cmsUser::sessionGet('user:id');
+		if (!empty($this->_id_user)) {
+			
+			$id_table = $_POST['id_table'];
 				
-				if (!empty($id_user)) {
-					
-					$id_variate = $_POST['variate'];
-								
-					if (is_numeric($id_table)) {
+			if (is_numeric($id_table)) {
 
-						$data = array(
-							'id_user' => $id_user,
-							'id_table' => $id_table,
-							'id_variate' => $id_variate,
-							'table_name' => $this->_page
-						);
-						$users_like = get_users_variate($id_table,$id_variate,$this->_page);
-						
-						if (isset($users_like) and !empty($users_like)) {	
-							
-							Database::delete($this->_table_users_like,$users_like['id']);
-													
-						} else {
-							
-							Database::insert($this->_table_users_like,$data,'id='.$users_like['id']);
-														
-						}					
+				Users_like::addLike($this->_page);					
 
-						$item = Database::getRow($this->_table,$id_table);
-												
-						$response['succes'] = true;
-						$response['html'] = get_buttons_recept($item,$this->_page);
-					}
-					
-				} else {
-					
-					$response['message'] = 'Зарегистрируйтесь или войдите в учетную запись';
-					
-				}
-				
+				$item = Database::getRow($this->_table,$id_table);
+										
+				$response['succes'] = true;
+				$response['html'] = get_buttons_recept($item,$this->_page);
+			
 			}
-	
+			
+		} else {
+			
+			$response['message'] = 'Зарегистрируйтесь или войдите в учетную запись';
+			
 		}
-		
+
 		echo json_encode($response);
 
 	}
@@ -193,58 +164,42 @@ class Recepty_Controller {
 
 		if (isset($_POST['action']) and !empty($_POST['action'])) {
 
-			$id_user = cmsUser::sessionGet('user:id');
-			
-			if (!empty($id_user)) {
+			if (!empty($this->_id_user)) {
 
 				if ($_POST['action']=='add') {
 	
-					$comment = htmlspecialchars($_POST['comment']);
-					
 					$id_table = $_POST['id_table'];
-					
-					$data = array(
-						'id_user' => $id_user,
-						'id_table' => $id_table,
-						'table_name' => $this->_page,
-						'comment' => $comment,
-						'date_create' => date('Y-m-d H:i:s'),
-						'pid' => $_POST['pid']
-					);		
-					Database::insert($this->_table_comment,$data);
+	
+					Comments::addComment($this->_page);
 					
 				} else {
+
+					$id = $_POST['id'];
+					$id_table = Comments::getIdTable($id);
 						
-					$id = $_POST['id'];			
-					$comment = Database::getRow($this->_table_comment,$id);
-					$id_table = $comment['id_table'];
-											
 					if ($_POST['action']=='edit') {
 						
-						$data = array(
-							'comment' => htmlspecialchars($_POST['comment'])
-						);
-					
-						Database::update($this->_table_comment,$data,'id='.$id);
+						Comments::updateComment($id);
 						
 					}
-					
+						
 					if ($_POST['action']=='remove') {
-						
-						Database::delete($this->_table_comment,$id);
+
+
+						Comments::removeComment($id);
 					
-					}
+					}											
 
 				}
 				
-				$comments = get_comments_where($id_table,$this->_page);
-				$response['html'] = html_comment_content($comments);
-				$response['id'] = $id_table;
+				$response['html'] = html_comment_content(Comments::getComments($id_table,$this->_page));
+				$response['id'] = $id_table;				
 				$response['succes'] = true;
 				
 			} else {
 				$response['message'] = 'Зарегистрируйтесь или войдите в учетную запись';
 			}
+			
 		} else {
 			$response['message'] = 'Произошла ошибка';
 		}

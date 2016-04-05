@@ -1,16 +1,22 @@
 <?php
 
-class Users {
+class Users extends Database {
 	
-	private static $_table, $_id_user;
+	private static $_table;
 
 	public static function init() {
 		
 		self::$_table = get_table('users');
-		self::$_id_user = cmsUser::isSessionSet('user') ? cmsUser::sessionGet('user:id') : 0;
-		
+
 	}
   
+	public static function getUser($user_id) {
+		
+		$user = self::getRow(self::$_table,$user_id);
+		
+		return $user;
+		
+	}
 	
 	public static function get_friends_list($action) {
 		
@@ -32,7 +38,7 @@ class Users {
 			$where .= ' and id IN ('.get_keys_items(Friends::get_old_friends(),'user_id').')';
 		}
 		
-		return Database::getRows(self::$_table, 'id DESC', false,$where);	
+		return self::getRows(self::$_table, 'id DESC', false,$where);	
 
 	}
 

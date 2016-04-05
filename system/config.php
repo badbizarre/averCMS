@@ -57,6 +57,9 @@ $config = array (
 		  1 => 'Pages',
 		  2 => 'Friends',
 		  3 => 'Users',
+		  4 => 'Messages',
+		  5 => 'Comments',
+		  6 => 'Users_like',
         ),
         'controller' => 'main',
       ),
@@ -204,7 +207,7 @@ $config = array (
         'expire' => 31536000,
       ),
       'pagination' => Array (
-        'rows_on_page' => 16,
+        'rows_on_page' => 40,
         'link_by_side' => 3,
         'url_segment' => 3,
       ),	  
@@ -221,6 +224,15 @@ $config = array (
     ),	
 	'users_recept' => Array (
       'table' => 'np_users_recept',
+    ),	
+	'users_dialogs' => Array (
+      'table' => 'np_users_dialogs',
+    ),	
+	'users_messages' => Array (
+      'table' => 'np_users_messages',
+    ),	
+	'messages' => Array (
+      'table' => 'np_messages',
     ),		
 	'photos' => Array (
       'table' => 'np_photos',

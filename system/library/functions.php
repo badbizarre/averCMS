@@ -444,7 +444,7 @@ function parse_by_povarenok_ru($site_href) {
 	$i = 1;		
 	if(count($html->find($instruction_tag2))) {	
 		foreach($html->find($instruction_tag2) as $div){
-			$item['recept'] .= $i++.") ".$div->last_child()->plaintext."\n";		
+			$item['recept'] .= $i++.". ".$div->last_child()->plaintext."\n";		
 		}
 	}
 
@@ -475,9 +475,22 @@ function get_ing_by_parse($ingredients) {
 	return $data;
 }
 
+function get_count_msg($count) {
 
+	$razryad = $count;
+	
+	if ($count > 20) $razryad = $count % 10;
+	$text = 'новых сообщений';
+	if ( $razryad == 1 ) $text = "новое сообщение"; 
+	if (( $razryad > 1 ) and ($razryad <= 4)) $text = "новых сообщения"; 
 
+	$result = $count.' '.$text;
+	
+	if ($count == 0) $result = "";
 
+	return $result;
+	
+}
 
 
 

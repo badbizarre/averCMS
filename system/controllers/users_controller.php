@@ -11,7 +11,7 @@ class Users_Controller {
 		
 		$this->_table = get_table($this->_page);
 		
-		$this->_content['left'] = Render::view ('cabinet/razdel').Render::view('catalog/razdel');
+		$this->_content['left'] = Render::view('cabinet/razdel').Render::view('catalog/razdel');
   			
 	}
 
@@ -28,7 +28,7 @@ class Users_Controller {
 			$this->_config['pagination']['url_segment']
 			);
 			
-		$items = Database::getRows($this->_table, 'id DESC', $pagination->getLimit(), $where);	
+		$items = Database::getRows($this->_table, 'last_visit DESC', $pagination->getLimit(), $where);	
 
 		$this->_content['content'] = Render::view (
 			$this->_page.'/list', Array (

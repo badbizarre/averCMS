@@ -41,7 +41,7 @@
 
 				</div>
 					
-				<?php $comments = Database::getRows(get_table('users_comment'),'id asc',false,'table_name="catalog" and id_table='.$item['id']); ?>
+				<?php $comments = Database::getRows(get_table('users_comment'),'id asc',false,'active=1 and table_name="catalog" and id_table='.$item['id']); ?>
 					
 				<div class="comment-block <?php if (empty($comments)): ?>hide<?php endif; ?>">
 					

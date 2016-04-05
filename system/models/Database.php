@@ -2,6 +2,12 @@
 
 class Database {
 	
+	public static $_id_user;
+	
+	public static function init() {
+		self::$_id_user = cmsUser::isSessionSet('user') ? cmsUser::sessionGet('user:id') : 0;		
+	}
+		
     public static function prepareValue($value){
 
 		$value = addslashes(trim($value));

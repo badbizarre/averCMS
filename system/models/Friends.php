@@ -1,13 +1,12 @@
 <?php
 
-class Friends {
+class Friends extends Database {
 	
-	private static $_table, $_id_user;
+	private static $_table;
 
 	public static function init() {
 		
 		self::$_table = get_table('users_friends');
-		self::$_id_user = cmsUser::isSessionSet('user') ? cmsUser::sessionGet('user:id') : 0;
 		
 	}
   
@@ -35,31 +34,31 @@ class Friends {
 			'is_mutual' => 2
 		);
 		$where = 'user_id = '.$friend_id.' and friend_id = '.self::$_id_user;
-		Database::update(self::$_table,$data,$where);
+		self::update(self::$_table,$data,$where);
 	
 	}
   
 	public static function get_friends() {
 
-		return Database::getRows(self::$_table,'id DESC', false, 'is_mutual = 1 and user_id = '.self::$_id_user);
+		return self::getRows(self::$_table,'id DESC', false, 'is_mutual = 1 and user_id = '.self::$_id_user);
 			
 	}
 
 	public static function get_old_friends() {
 
-		return Database::getRows(self::$_table,'id DESC', false, 'is_mutual = 2 and friend_id = '.self::$_id_user);
+		return self::getRows(self::$_table,'id DESC', false, 'is_mutual = 2 and friend_id = '.self::$_id_user);
 			
 	}
 
 	public static function get_out_friends() {
 
-		return Database::getRows(self::$_table,'id DESC', false, 'is_mutual <> 1 and user_id = '.self::$_id_user);
+		return self::getRows(self::$_table,'id DESC', false, 'is_mutual <> 1 and user_id = '.self::$_id_user);
 			
 	}
 
 	public static function get_new_friends() {
 
-		return Database::getRows(self::$_table,'id DESC', false, 'is_mutual = 0 and friend_id = '.self::$_id_user);
+		return self::getRows(self::$_table,'id DESC', false, 'is_mutual = 0 and friend_id = '.self::$_id_user);
 			
 	}
 
@@ -67,7 +66,7 @@ class Friends {
 		
 		$where = 'user_id = '.self::$_id_user.' and friend_id = '.$friend_id;
 		
-		return Database::getCount(self::$_table,$where);
+		return self::getCount(self::$_table,$where);
 		
 	}
 	
@@ -75,7 +74,7 @@ class Friends {
 				
 		$where = 'user_id = '.$friend_id.' and friend_id = '.self::$_id_user.' and is_mutual = 1';
 		
-		return Database::getCount(self::$_table,$where);
+		return self::getCount(self::$_table,$where);
 		
 	}
 		
@@ -83,7 +82,7 @@ class Friends {
 				
 		$where = 'user_id = '.$friend_id.' and friend_id = '.self::$_id_user.' and is_mutual = 0';
 		
-		return Database::getCount(self::$_table,$where);
+		return self::getCount(self::$_table,$where);
 		
 	}
 	
@@ -159,7 +158,7 @@ class Friends {
 		
 		$html = '<form action="/user/'.$action.'" method="POST" class="jsform">
 			<input type="hidden" name="friend_id" value="'.$friend_id.'">								
-			<button type="submit" class="btn btn-default">'.$text_btn.'</button>
+			<button type="submit" class="btn btn-default button-panel__btn">'.$text_btn.'</button>
 		</form>';
 		
 		return $html;
